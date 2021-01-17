@@ -1,19 +1,49 @@
 package domain;
-public class Employee {
 
+/**
+ * Клас представляє об'єкт працівника.
+ */
+public class Employee {
+	
+    /**
+     * Строкове представлення об'єкта 
+     */
     @Override
     public String toString() {
-        return "\nEmployee ID= " + ID + "\nName= " + name + "\nJobTitle= " + jobTitle + "\nLevel= " + level + "\nDept= " + dept;
+        return "\nEmployee ID= " + ID + "\nName= " + name + "\nJobTitle= " + 
+        		jobTitle + "\nLevel= " + level + "\nDept= " + dept;
     }
 
+    /**
+     * Ім'я робітника
+     */
     private String name;
+    
+    /**
+     * Посада робітника
+     */
     private String jobTitle;
+    
+    /**
+     * Ідентифікатор робітника
+     */
     private int ID;
+    
+    /**
+     * Рівень робітника
+     */
     private int level;
+    
+    /**
+     * Відділ робітника
+     */
     private String dept;
 
    // private static int employeesCount = 0;
-
+    
+    /**
+     * Створює новий об'єкт.
+     */
     public Employee(String name, String jobTitle, int level, String dept) {
         this();
         setName(name);
@@ -29,26 +59,41 @@ public class Employee {
         }
         this.dept = dept;
     }
-
+    
+    /**
+     * Створює новий об'єкт.
+     */
     public Employee() {
         ID = (int)(Math.random()*1000);
 //        if (ID > 10000) {
 //            throw new NumberFormatException("ERROR! Employee's ID cannot be greater than 10000. Employee is not created!");
 //        }
     }
-
+    
+    /**
+     * Встановлює поле посади робітника.
+     */
     public void setJobTitle(String job) {
         jobTitle = job;
     }
-
+    
+    /**
+     * Повертає посаду робітника 
+     */
     public String getJobTitle() {
         return jobTitle;
     }
-
+    
+    /**
+     * Повертає ім'я робітника
+     */
     public String getName() {
         return name;
     }
-
+    
+    /**
+     * Встановлює поле і визначає рівень робітника. 
+     */
     public void setLevel(int level) {
         switch (level) {
             case 1:
@@ -60,19 +105,32 @@ public class Employee {
                 this.level = 1;
         }
     }
+    
+    /**
+     * Повертає рівень робітника 
 
+     */
     public int getLevel() {
         return level;
     }
-
+    
+    /**
+     * Повертає відділ робітника.
+     */
     public String getDept() {
         return dept;
     }
-
+    
+    /**
+     * Встановлює поле відділа робітника. 
+     */
     public void setDept(String dept) {
         this.dept = dept;
     }
-
+    
+    /**
+     * Встановлює поле імені робітника. 
+     */
     public void setName(String name) {
 //        boolean correctName = true;
 //        for (int i = 0; i < name.length(); i++) {
